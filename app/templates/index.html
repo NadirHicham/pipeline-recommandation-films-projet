@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+    <script type="text/javascript">
+        var films = {{ suggestions| tojson }};
+    </script>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            background-size: cover;
+        }
+
+        #autoComplete {
+            margin-top: 30%;
+            width: 40%;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <center>
+        <div class="wrap">
+            <div>
+                <form class="search" action="{{ url_for('main') }}" method="POST">
+                    <input type="text" class="searchTerm" id="autoComplete" autocomplete="true" name="movie_name"
+                        placeholder="Enter a full movie name">
+
+                    </button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
