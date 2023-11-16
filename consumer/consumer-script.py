@@ -2,7 +2,7 @@ import findspark
 findspark.init()
 
 import logging
-from pyspark import SparkConf
+#from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType,DoubleType,BooleanType,IntegerType,ArrayType
 from pyspark.sql.functions import from_json, col, lit, concat,to_date

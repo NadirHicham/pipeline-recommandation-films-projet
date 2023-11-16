@@ -61,7 +61,7 @@ def get_recommendations(title):
 
     return_df = pd.DataFrame(columns=['title','year'])
     return_df['title'] = tit
-    #return_df['year'] = pd.to_datetime(dat,unit='ms').dt.year
+    return_df['year'] = pd.to_datetime(dat,unit='ms').dt.year
     return_df['ratings'] = rating
     return_df['description']=description
     return_df['id']=movieid
